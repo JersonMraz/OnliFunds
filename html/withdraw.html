@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../css/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+	<title>OnliFunds</title>
+	<style>
+		.line-1 {
+		 height: 20px;
+		 }
+		.line-2 {
+			height: 20px; /* Height of the vertical line */
+		}
+		.cre-det{
+			border:none;
+			display: none;
+			padding: 0 20px 20px 20px;
+			margin-top: 0;
+			border-radius: 5px;
+			background-color: transparent;
+		}
+		.cre {
+			padding: 0;
+			border-radius: 5px;
+			margin-top: 0;
+		}
+
+	</style>
+</head>
+<body>
+    <!-- Navbar for Logged-in Users -->
+    <nav class="logged-in-navbar">
+        <div class="logged-in-navbar-logo">
+            <a href="lanAfter.html" style="text-decoration:none;">
+                <img src="../images/logo.png" alt="OnliFunds Logo" class="logged-in-logo-img">
+            </a>
+            <div class="logged-in-logo-text">
+                <h1><a href="lanAfter.html" style="text-decoration:none; color:black;">OnliFunds</a></h1>
+                <p>Empower Your Ideas</p>
+            </div>
+        </div>
+        <div class="logged-in-nav-links">
+            <a href="lanAfter.html" class="logged-in-nav-item">Home</a>
+            <a href="aboutA.html" class="logged-in-nav-item">About</a>
+            <a href="projectsA.html" class="logged-in-nav-item">Projects</a>
+            <a href="create1.html" class="logged-in-nav-item logged-in-start-project-button">Start a Project</a>
+            <div class="logged-in-user-profile">
+                <span class="logged-in-user-name">Rosita Quarez</span>
+                <img src="../images/profile.png" alt="User Profile" class="logged-in-profile-img">
+                <div class="dropdown-menu">
+                    <a href="my-projects.html">My Projects</a>
+                    <a href="backed-projects.html">Backed Projects</a>
+                    <a href="profile-settings.html">Profile Settings</a>
+                    <a href="login.html">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userProfile = document.querySelector('.logged-in-user-profile');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            userProfile.addEventListener('click', function () {
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Close the dropdown if clicked outside
+            document.addEventListener('click', function (e) {
+                if (!userProfile.contains(e.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <!-- About Banner Section -->
+    <section class="banner1">
+        <div class="overlay"></div>
+        <div class="banner-content">
+            <h1>Withdraw</h1>
+        </div>
+    </section>
+
+
+    <!-- CONTENT -->
+    <section class="create-container-withdraw" >
+        <div class="main-content4">
+            <div class="choose-withdraw-amount">
+                <img src="../OnliFunds/images/catdog.svg" alt="">
+                <div class="choose-d-a-info">
+                    <h1>Choose your withdraw amount for</h1>
+                    <h2>Help Us Bring Life-Saving Treatments to Those in Need</h2>
+                </div>
+            </div>
+                <h2>Enter the amount</h1>
+            <div class="enter-amount-opt">
+                <div class="amount-opt-list">
+                    <button class="toggleButton">₱50</button>
+                    <button class="toggleButton">₱100</button>
+                    <button class="toggleButton">₱200</button>
+                    <button class="toggleButton">₱500</button>
+                    <button class="toggleButton">₱1000</button>
+                </div>
+                <script>
+                    const buttons = document.querySelectorAll(".toggleButton");
+
+                buttons.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        // Remove the 'active' class from all buttons
+                        buttons.forEach(btn => btn.classList.remove("active"));
+                        // Add the 'active' class to the clicked button
+                        button.classList.add("active");
+                    });
+                });
+                </script>
+
+
+                <div class="input-amount-opt">
+                    <div class="input-a-opt-sign">
+                        <h1>₱</h1>
+                        <h2>PHP</h2>
+                    </div>
+                    <input type="number">
+                </div>
+            </div>
+
+            <h2> Payment method </h2>
+            <div class="payment-opt-cont">
+                <div class="payment-options">
+                    <label for="paypal">
+                    <input id="paypal" name="payment" onclick="showPaymentMethod('paypal-details')" type="radio"/>
+                    PayPal
+                    </label>
+                    <div class="details" id="paypal-details">
+                    <div class="payment-method-content">
+                    <img alt="PayPal logo" height="50" src="../images/paypal.png" width="100"/>
+                    <ul>
+                        <li>
+                        PayPal is widely available and trusted across Cebu City, Philippines, making it a popular choice, especially among digitally savvy users.
+                        </li>
+                        <li>
+                        Set up a new PayPal account or link an existing one to your fundraising page in just seconds.
+                        </li>
+                    </ul>
+                    <button id="paypal-link-button" onclick="toggleLink('paypal')">
+                        Link with PayPal
+                    </button>
+                    </div>
+                    </div>
+                    <label for="gcash">
+                    <input id="gcash" name="payment" onclick="showPaymentMethod('gcash-details')" type="radio"/>
+                    GCash
+                    </label>
+                    <div class="details" id="gcash-details">
+                    <div class="payment-method-content">
+                    <img alt="GCash logo" height="50" src="../images/gcash.png" width="100"/>
+                    <ul>
+                        <li>
+                        GCash is available in all parts of Cebu City, Philippines, and it's a commonly preferred payment method, especially amongst the more Internet-savvy.
+                        </li>
+                        <li>
+                        Create an account at GCash or connect an existing account to your fundraising page in seconds.
+                        </li>
+                    </ul>
+                    <button id="gcash-link-button" onclick="toggleLink('gcash')">
+                        Unlink with GCash
+                    </button>
+                    </div>
+                    </div>
+                    <label for="paymaya">
+                    <input id="paymaya" name="payment" onclick="showPaymentMethod('paymaya-details')" type="radio"/>
+                    PayMaya
+                    </label>
+                    <div class="details" id="paymaya-details">
+                    <div class="payment-method-content" style="padding-top: 15px;">
+                    <h2 style="text-align:center; color:#01B463; font-size: 36px; padding-bottom: 10px;">
+                        PayMaya
+                    </h2>
+                    <ul>
+                        <li>
+                        PayMaya is accessible throughout Cebu City, Philippines, and is a favored payment option, particularly among tech-savvy users.
+                        </li>
+                        <li>
+                        Set up a new PayMaya account or connect an existing one to your fundraising page in just seconds.
+                        </li>
+                    </ul>
+                    <button id="paymaya-link-button" onclick="toggleLink('paymaya')">
+                        Link with PayMaya
+                    </button>
+                    </div>
+                    </div>
+                    <label for="credit-debit">
+                    <input id="credit-debit" name="payment" onclick="showPaymentMethod('credit-debit-details')" type="radio"/>
+                    Credit or Debit
+                    </label>
+                    <div class="details cre-det" id="credit-debit-details">
+                    <div class="payment-method-content cre" style="background-color: transparent; border:none;">
+                    <input class="cardnum" placeholder="Card number" type="text"/>
+                    <div class="form-group">
+                        <input placeholder="MM/YY" type="text"/>
+                        <input placeholder="CVV" type="text"/>
+                    </div>
+                    <input class="cardname" placeholder="Cardholder's name" type="text"/>
+                    <div class="form-group">
+                        <input readonly type="text" value="Cebu, Philippines"/>
+                        <input id="city-code" placeholder="6000" type="number"/>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="dont-dis-opt-cont"> 
+                <label class="container-check">Don’t display any of my information on the fundraiser.
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+            </div>
+
+            <div class="your-withdrawal">
+                <h1>Your Withdrawal</h1>
+                <div class="withdrawal-total-am">
+                    <p>Total Amount</p>
+                    <p>₱ 0.00</p>
+                </div>
+            </div>
+            <div class="withdraw-button">
+                <button class="withdraw-btn" type="submit"><a href="../html/create4.html">Withdraw Now</a></button>
+            </div>
+        </div>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const paymentStates = {
+                paypal: false,
+                gcash: true, // GCash is pre-selected
+                paymaya: false,
+                "credit-debit": false
+            };
+
+            function showPaymentMethod(method) {
+                // Hide all payment details
+                const methods = document.querySelectorAll('.details');
+                methods.forEach(el => (el.style.display = 'none'));
+
+                // Show the selected payment details
+                const selectedMethod = document.getElementById(method);
+                if (selectedMethod) {
+                    selectedMethod.style.display = 'block';
+                }
+            }
+
+            function toggleLink(method) {
+                // Unlink all other methods
+                Object.keys(paymentStates).forEach(key => {
+                    if (key !== method) {
+                        paymentStates[key] = false;
+                        const otherButton = document.getElementById(`${key}-link-button`);
+                        if (otherButton) {
+                            otherButton.textContent = `Link to ${capitalize(key)}`;
+                        }
+                    }
+                });
+
+                // Toggle the selected method's linked state
+                paymentStates[method] = !paymentStates[method];
+
+                // Update the button text for the selected method
+                const button = document.getElementById(`${method}-link-button`);
+                if (button) {
+                    if (paymentStates[method]) {
+                        button.textContent = `Unlink from ${capitalize(method)}`;
+                    } else {
+                        button.textContent = `Link to ${capitalize(method)}`;
+                    }
+                }
+            }
+
+            // Helper function to capitalize the first letter of the method
+            function capitalize(text) {
+                return text.charAt(0).toUpperCase() + text.slice(1);
+            }
+
+            // Function to initialize the page
+            function initializePage() {
+                // Set the pre-selected payment method's button text
+                Object.keys(paymentStates).forEach(method => {
+                    const button = document.getElementById(`${method}-link-button`);
+                    const radio = document.getElementById(method);
+                    if (button) {
+                        if (paymentStates[method]) {
+                            button.textContent = `Unlink from ${capitalize(method)}`;
+                        } else {
+                            button.textContent = `Link to ${capitalize(method)}`;
+                        }
+                    }
+                    // Check the radio button for the pre-selected method
+                    if (radio) {
+                        radio.checked = paymentStates[method];
+                    }
+                });
+
+                // Automatically show the pre-selected payment method's details
+                const preSelected = Object.keys(paymentStates).find(method => paymentStates[method]);
+                if (preSelected) {
+                    showPaymentMethod(`${preSelected}-details`);
+                }
+            }
+
+            // Attach event listeners to radio buttons
+            const radioButtons = document.querySelectorAll('input[name="payment"]');
+            radioButtons.forEach(button => {
+                button.addEventListener('change', function () {
+                    showPaymentMethod(`${this.id}-details`);
+                });
+            });
+
+            // Attach event listeners to toggle link buttons
+            document.querySelectorAll('.details button').forEach(button => {
+                const method = button.id.split('-')[0]; // Extract method name from button ID
+                button.addEventListener('click', function () {
+                    toggleLink(method);
+                });
+            });
+
+            // Initialize the page
+            initializePage();
+        });
+
+        </script>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section about" style="text-align: left; padding-right:200px;">
+                <h2 class="footer-logo">OnliFunds</h2>
+                <p class="footer-description">
+                    OnliFunds is a crowdfunding website that lets you raise money for anything that matters to you.
+                    From personal causes and events to projects and more. We aim to help people from our community
+                    to raised the funds they need.
+                </p>
+            </div>
+
+            <!-- Links Section -->
+            <div class="footer-section links" style="text-align: left; padding-right:200px;">
+                <h3 class="footer-heading">Learn More</h3>
+                <ul class="footer-links">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/#team-members">Team Members</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms And Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section social-media" style="text-align: left;">
+                <h3 class="footer-heading">Social Medias</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><img src="../images/facebook.png" alt="Facebook Icon" style="width: 28px;height:auto;"> Facebook</a></li>
+                    <li><a href="#"><img src="../images/twitter.png" alt="Twitter Icon" style="width: 28px;height:auto;"> Twitter</a></li>
+                    <li><a href="#"><img src="../images/instagram.png" alt="Instagram Icon" style="width: 28px;height:auto;"> Instagram</a></li>
+                    <li><a href="#"><img src="../images/linkedin.png" alt="LinkedIn Icon" style="width: 28px;height:auto;"> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>© 2024 Copyright OnliFunds. All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

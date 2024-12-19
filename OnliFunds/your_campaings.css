@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FBFBFB;
+}
+
+/* Navbar section */
+.navbar {
+    background-color: white;
+}
+.navbar-brand {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+
+li.nav-item {
+    text-align: right;
+}
+
+/* Logo */
+.header-name {
+    font-weight: 700;
+    font-size: 40px;
+    color: black;
+}
+
+#header-slogan {
+    display: block;
+    text-align: center;
+    padding-left: 100px;
+    margin-top: -30px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.logo-img {
+    width: 80px;
+    height: 80px;
+}
+
+
+
+/* Nav Options */
+
+.nav-opt-cont {
+    padding-left: 335px;
+}
+.nav-option {
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    padding: 5px 45px 5px 50px;
+}
+
+
+/* Sign-In Button */
+.nav-but-cont {
+    padding-right: 20px;
+}
+
+.navbar .start-project {
+    font-size: 16px;
+    font-weight: 800;
+    color: #FF7369;
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #FF7369;
+    margin-right: 50px;
+    white-space: nowrap;
+    text-align: center;
+    padding-top: 13px;
+}
+
+.navbar .start-project:hover {
+    color: white;
+    background-color: #FF7369;
+    border-radius: 8px;
+    border: 1px solid #FF7369;}
+
+/* Get Started Button */
+.navbar .btn-log-in {
+    font-weight: 600;
+    padding: 15px 5px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+/* TITLE SECTION */
+
+.title-cont img {
+    width: 100%;
+}
+
+
+
+
+/* CONTENT-------------- */
+.content {
+    padding: 7% 14% 5% 14%;
+}
+
+.content-container {
+    background-color: white;
+    border: #000000 2px solid;
+    border-radius: 8px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 
+                0 3px 4px rgba(0, 0, 0, 0.06); /* Subtle multi-layer shadow */
+    display: flex;
+}
+
+.content-left {
+    width: 65%;
+    padding: 40px 30px;
+    border-right: #000000 2px solid;
+}
+
+.content-left img {
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.c-l-1 {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.c-l-1 h1{
+    color: #1B8271;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.c-l-1 h2 {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.content-left h3 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 40px 0px;
+}
+
+
+
+
+
+/* PROJECT DETAILS PROGRESS BAR */
+.custom-progress-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.custom-progress {
+    background-color: #e9ecef; /* Light grey background */
+    border-radius: 5px;
+}
+
+.custom-progress-bar {
+    background-color: #ff6f61; /* Custom progress color */
+    height: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.custom-progress-label {
+    position: absolute;
+    top: -30px; /* Position above the progress bar */
+    right: 0; /* Align with the end of progress */
+    transform: translateX(50%); /* Center the label */
+    background-color: #ff6f61;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500pxh;
+    padding: 5px 10px;
+    border-radius: 20px; /* Rounded label */
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-progress-label::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Creates the small pointer */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ff6f61 transparent transparent transparent;
+}
+
+
+/* C-L-2 */
+.c-l-2{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.dets-cont {
+    display: flex;
+    margin: 10px 5px;
+}
+
+.dets-cont h1{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 28px;
+    margin-bottom: 10px;
+}
+
+.dets-cont img {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+/* C-L-3---- */
+.c-l-3 {
+    display: flex;
+    margin: 20px 0px;
+}
+
+.donors h4{
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 100px;
+}
+
+.donors-data h5 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+
+/* VIEW CAMPAIGN */
+
+
+.view-campaign-button a {
+    border: #000000 1px solid;
+    color: black;
+    border-radius: 8px;
+    padding: 20px 30px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 300px;
+    text-align: center;
+    margin-left: 500px;
+    margin-bottom: 30px;
+}
+
+
+
+/* CONTENT RIGHTT------------------- */
+.content-right {
+    padding: 70px 50px;
+}
+
+.cont-right-info {
+    display: flex;
+    margin-bottom: 35px;
+}
+
+.cont-right-info h1 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0px 20px;
+}
+
+.cont-right-info img {
+    width: 23px;
+    height: 23px;
+    margin: 2px 0px;
+}
+
+
+
+
+/* General Footer Styles */
+.footer {
+    background-color: #ffffff;
+    padding: 40px 0px;
+    text-align: center;
+    color: #333;
+    clear: both; /* Ensures footer is below any floating content */
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-left: 30px;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 200px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Additional Spacing */
+.poster-footer-section {
+    margin-bottom: 40px; 
+}
+
+
+.footer-section h3 {
+    font-size: 1.6em;
+    font-weight: bolder;
+    margin-bottom: 40px;
+}
+
+.footer-section p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    font-weight: bold;
+    width: 60%;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.footer-section ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #1B8271; /* Change this to your preferred accent color */
+}
+
+.social-media-list li {
+    display: flex;
+    align-items: center;
+}
+
+.social-media-list li img {
+    margin-right: 10px;
+}
+
+/* Copyright Section */
+.footer-copyright {
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 50px;
+    color: black;
+}
+
+
+
+
+/* Fluidity */
+
+@media (max-width: 1880px) {
+
+    .navbar .search-bar {
+        position: relative;
+        margin-left: 500px;
+    }
+}
+
+@media (max-width: 1817px) {
+    .slogan-text h1 {
+        font-size: 85px;
+    }
+}
+
+@media (min-width: 1441px) {
+    .slogan-text {
+        flex: 1;
+        max-width: 40%;
+    }
+    .slogan-text h1 {
+        max-width: 100%;
+    }
+
+    .slogan-text p {
+        max-width: 100%;
+    }
+
+    .landing-img-section {
+        flex: 1;
+        max-width: 60%;
+        margin-left: 30px;
+    }
+
+}
+
+@media (max-width: 1440px) {
+
+    .slogan-text {
+        text-align: center;
+        margin-bottom: 20%;
+    }
+
+    .slogan-text p {
+        max-width: 100%;
+    }
+
+
+    .navbar .search-bar {
+        position: relative;
+        margin-left: 200px;
+    }
+
+    .convenience-text p {
+        max-width: 100%;
+    }
+    .end-section .text-content {
+        max-width: 50%;
+        padding-left: 0px;
+        margin-right: 0px;
+    }
+
+    .end-section .image-content {
+        max-width: 50%;
+        margin-right:10px;
+    }
+
+}
+
+@media (max-width: 1336px) {
+
+    .liborrow-logo {
+        font-size: 50px;
+        margin-bottom:15px;
+    }
+    
+    .navbar .search-bar input {
+        width: 370px;
+        height: 50px;
+    }
+
+    .navbar .sign-in {
+        font-size: 15px;
+    }
+
+    .navbar .btn-get-started {
+        font-size: 15px;
+    }
+    .end-section .text-content {
+        max-width: 50%;
+        padding-left: 0px;
+        margin-right: 0px;
+    }
+
+    .end-section .image-content {
+        max-width: 50%;
+        margin-right:10px;
+    }
+
+}
+
+@media (max-width: 1140px) {
+    
+    .navbar .search-bar input {
+        margin-top: 3%;
+        width: 300px;
+        height: 50px;
+    }
+
+    .navbar .sign-in {
+        font-size: 20px;
+        color: black;
+        text-decoration: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 40px;
+        padding-right:70px;
+    }
+
+    .navbar .btn-get-started {
+        background-color: #FF7B42 !important;
+        color: white;
+        font-weight: 500;
+        padding: 15px 30px;
+        border-radius: 50px;
+        border: none;
+        text-align: center;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+}
+
+@media (max-width: 1082px) {
+
+    .navbar .search-bar {
+        position: relative;
+        margin-left: 100px;
+    }
+
+}
+
+
+
+
+@media (min-width: 1080px) {
+    .navbar-toggler {
+        display: none; /* Hide the burger menu on large screens */
+    }
+    .navbar-collapse {
+        display: none !important;
+    }
+}
+
+/* Show search bar and buttons for larger screens */
+@media (min-width: 1080px) {
+    .search-bar {
+        display: flex !important;
+    }
+
+    .sign-in,
+    .btn-get-started {
+        display: inline-block !important;
+    }
+}

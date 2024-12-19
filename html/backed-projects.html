@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnliFunds</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMtl/tE7HT72fSUkSuZXCe9jKg6abX5xnu2bDbD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+    <!-- Navbar for Logged-in Users -->
+    <nav class="logged-in-navbar">
+        <div class="logged-in-navbar-logo">
+            <a href="lanAfter.html" style="text-decoration:none;">
+                <img src="../images/logo.png" alt="OnliFunds Logo" class="logged-in-logo-img">
+            </a>
+            <div class="logged-in-logo-text">
+                <h1><a href="lanAfter.html" style="text-decoration:none; color:black;">OnliFunds</a></h1>
+                <p>Empower Your Ideas</p>
+            </div>
+        </div>
+        <div class="logged-in-nav-links">
+            <a href="lanAfter.html" class="logged-in-nav-item">Home</a>
+            <a href="aboutA.html" class="logged-in-nav-item">About</a>
+            <a href="projectsA.html" class="logged-in-nav-item">Projects</a>
+            <a href="create1.html" class="logged-in-nav-item logged-in-start-project-button">Start a Project</a>
+            <div class="logged-in-user-profile">
+                <span class="logged-in-user-name">Rosita Quarez</span>
+                <img src="../images/profile.png" alt="User Profile" class="logged-in-profile-img">
+                <div class="dropdown-menu">
+                    <a href="my-projects.html">My Projects</a>
+                    <a href="backed-projects.html">Backed Projects</a>
+                    <a href="profile-settings.html">Profile Settings</a>
+                    <a href="login.html">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userProfile = document.querySelector('.logged-in-user-profile');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            userProfile.addEventListener('click', function () {
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Close the dropdown if clicked outside
+            document.addEventListener('click', function (e) {
+                if (!userProfile.contains(e.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <!-- About Banner Section -->
+    <section class="banner1">
+        <div class="overlay"></div>
+        <div class="banner-content">
+            <h1>Backed Projects</h1>
+        </div>
+    </section>
+    <!-- Recent Projects Section -->
+        <section class="recent-projects">
+    <div class="project-grid">
+		<div class="project-card" data-project-id="2">
+        <a href="../html/projectdet.html">
+            <img src="../images/project1.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <span class="project-category">Health</span>
+                <h3>Help Us Bring Life-Saving Treatments to Those in Need</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                <div class="project-details">
+                    <div class="project-fund"><img src="../images/moneylogo.svg">10,000</div>
+                    <div class="project-time"><img src="../images/calendar.svg">45 Days Left</div>
+                </div>
+            </div>
+        </a>
+        <!-- Author Anchor -->
+        <a href="campaigns.html?author=AG" class="project-author">
+            <div class="author-icon">AG</div>
+            <div class="author-info">
+                <span class="author-name">Anita Gamboa</span>
+                <span><p>5 Campaigns</p> | Cebu City</span>
+            </div>
+        </a>
+    </div>
+<div class="project-card" data-project-id="2">
+        <a href="../html/projectdet.html">
+            <img src="../images/project1.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <span class="project-category">Health</span>
+                <h3>Help Us Bring Life-Saving Treatments to Those in Need</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                <div class="project-details">
+                    <div class="project-fund"><img src="../images/moneylogo.svg">10,000</div>
+                    <div class="project-time"><img src="../images/calendar.svg">45 Days Left</div>
+                </div>
+            </div>
+        </a>
+        <!-- Author Anchor -->
+        <a href="campaigns.html?author=AG" class="project-author">
+            <div class="author-icon">AG</div>
+            <div class="author-info">
+                <span class="author-name">Anita Gamboa</span>
+                <span><p>5 Campaigns</p> | Cebu City</span>
+            </div>
+        </a>
+    </div>
+	<div class="project-card" data-project-id="2">
+        <a href="../html/projectdet.html">
+            <img src="../images/project1.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <span class="project-category">Health</span>
+                <h3>Help Us Bring Life-Saving Treatments to Those in Need</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                <div class="project-details">
+                    <div class="project-fund"><img src="../images/moneylogo.svg">10,000</div>
+                    <div class="project-time"><img src="../images/calendar.svg">45 Days Left</div>
+                </div>
+            </div>
+        </a>
+        <!-- Author Anchor -->
+        <a href="campaigns.html?author=AG" class="project-author">
+            <div class="author-icon">AG</div>
+            <div class="author-info">
+                <span class="author-name">Anita Gamboa</span>
+                <span><p>5 Campaigns</p> | Cebu City</span>
+            </div>
+        </a>
+    </div>
+	<div class="project-card" data-project-id="2">
+        <a href="../html/projectdet.html">
+            <img src="../images/project1.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <span class="project-category">Health</span>
+                <h3>Help Us Bring Life-Saving Treatments to Those in Need</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                <div class="project-details">
+                    <div class="project-fund"><img src="../images/moneylogo.svg">10,000</div>
+                    <div class="project-time"><img src="../images/calendar.svg">45 Days Left</div>
+                </div>
+            </div>
+        </a>
+        <!-- Author Anchor -->
+        <a href="campaigns.html?author=AG" class="project-author">
+            <div class="author-icon">AG</div>
+            <div class="author-info">
+                <span class="author-name">Anita Gamboa</span>
+                <span><p>5 Campaigns</p> | Cebu City</span>
+            </div>
+        </a>
+    </div>
+		
+        <!-- Repeat similar structure for other project cards -->
+    </div>
+	<div class="project-grid">
+		<div class="project-card" data-project-id="2">
+        <a href="../html/projectdet.html">
+            <img src="../images/project1.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <span class="project-category">Health</span>
+                <h3>Help Us Bring Life-Saving Treatments to Those in Need</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                <div class="project-details">
+                    <div class="project-fund"><img src="../images/moneylogo.svg">10,000</div>
+                    <div class="project-time"><img src="../images/calendar.svg">45 Days Left</div>
+                </div>
+            </div>
+        </a>
+        <!-- Author Anchor -->
+        <a href="campaigns.html?author=AG" class="project-author">
+            <div class="author-icon">AG</div>
+            <div class="author-info">
+                <span class="author-name">Anita Gamboa</span>
+                <span><p>5 Campaigns</p> | Cebu City</span>
+            </div>
+        </a>
+    </div>
+<div class="project-card" data-project-id="2">
+        <a href="../html/projectdet.html">
+            <img src="../images/project1.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <span class="project-category">Health</span>
+                <h3>Help Us Bring Life-Saving Treatments to Those in Need</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                <div class="project-details">
+                    <div class="project-fund"><img src="../images/moneylogo.svg">10,000</div>
+                    <div class="project-time"><img src="../images/calendar.svg">45 Days Left</div>
+                </div>
+            </div>
+        </a>
+        <!-- Author Anchor -->
+        <a href="campaigns.html?author=AG" class="project-author">
+            <div class="author-icon">AG</div>
+            <div class="author-info">
+                <span class="author-name">Anita Gamboa</span>
+                <span><p>5 Campaigns</p> | Cebu City</span>
+            </div>
+        </a>
+    </div>
+	<div class="project-card" data-project-id="2">
+        <a href="../html/projectdet.html">
+            <img src="../images/project1.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <span class="project-category">Health</span>
+                <h3>Help Us Bring Life-Saving Treatments to Those in Need</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                <div class="project-details">
+                    <div class="project-fund"><img src="../images/moneylogo.svg">10,000</div>
+                    <div class="project-time"><img src="../images/calendar.svg">45 Days Left</div>
+                </div>
+            </div>
+        </a>
+        <!-- Author Anchor -->
+        <a href="campaigns.html?author=AG" class="project-author">
+            <div class="author-icon">AG</div>
+            <div class="author-info">
+                <span class="author-name">Anita Gamboa</span>
+                <span><p>5 Campaigns</p> | Cebu City</span>
+            </div>
+        </a>
+    </div>
+	<div class="project-card" data-project-id="2">
+        <a href="../html/projectdet.html">
+            <img src="../images/project1.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <span class="project-category">Health</span>
+                <h3>Help Us Bring Life-Saving Treatments to Those in Need</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                <div class="project-details">
+                    <div class="project-fund"><img src="../images/moneylogo.svg">10,000</div>
+                    <div class="project-time"><img src="../images/calendar.svg">45 Days Left</div>
+                </div>
+            </div>
+        </a>
+        <!-- Author Anchor -->
+        <a href="campaigns.html?author=AG" class="project-author">
+            <div class="author-icon">AG</div>
+            <div class="author-info">
+                <span class="author-name">Anita Gamboa</span>
+                <span><p>5 Campaigns</p> | Cebu City</span>
+            </div>
+        </a>
+    </div>
+		
+        <!-- Repeat similar structure for other project cards -->
+    </div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all the project cards and authors
+    const projectCards = document.querySelectorAll('.project-card');
+    const authors = document.querySelectorAll('.project-author');
+
+    // Handle project card click
+    projectCards.forEach(card => {
+        card.addEventListener('click', function(event) {
+            // Prevent link from opening immediately
+            event.preventDefault();
+            
+            // Get the project ID from the clicked card
+            const projectId = card.getAttribute('data-project-id');
+            
+            // Redirect to the project details page (or you could add more dynamic URL)
+            window.location.href = `../html/projectdet.html?project=${projectId}`;
+        });
+    });
+
+    // Handle author click with redirect using JavaScript
+    authors.forEach(author => {
+        author.addEventListener('click', function(event) {
+            // Prevent the project card click from triggering
+            event.stopPropagation();
+            
+            // Get the author ID from the clicked author
+            const authorId = author.getAttribute('data-author-id');
+            
+            // Redirect to the author's campaign page
+            window.location.href = `campaigns.html?author=${authorId}`;
+        });
+    });
+});
+</script>
+
+                 <!-- Footer Section -->
+				<footer class="footer">
+					<div class="footer-content">
+						<!-- About Section -->
+						<div class="footer-section about" style="text-align: left; padding-right:200px;">
+							<h2 class="footer-logo">OnliFunds</h2>
+							<p class="footer-description">
+								OnliFunds is a crowdfunding website that lets you raise money for anything that matters to you.
+								From personal causes and events to projects and more. We aim to help people from our community
+								to raised the funds they need.
+							</p>
+						</div>
+
+						<!-- Links Section -->
+						<div class="footer-section links" style="text-align: left; padding-right:200px;">
+							<h3 class="footer-heading">Learn More</h3>
+							<ul class="footer-links">
+								<li><a href="/about">About</a></li>
+								<li><a href="/#team-members">Team Members</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Terms And Conditions</a></li>
+							</ul>
+						</div>
+
+						<!-- Social Media Section -->
+						<div class="footer-section social-media" style="text-align: left;">
+							<h3 class="footer-heading">Social Medias</h3>
+							<ul class="social-icons">
+								<li><a href="#"><img src="facebook.png" alt="Facebook Icon" style="	width: 28px;height:auto;"> Facebook</a></li>
+								<li><a href="#"><img src="twitter.png" alt="Twitter Icon" style="	width: 28px;height:auto;"> Twitter</a></li>
+								<li><a href="#"><img src="instagram.png" alt="Instagram Icon" style="	width: 28px;height:auto;"> Instagram</a></li>
+								<li><a href="#"><img src="linkedin.png" alt="LinkedIn Icon" style="	width: 28px;height:auto;"> LinkedIn</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Copyright Section -->
+					<div class="footer-bottom">
+						<p>© 2024 Copyright OnliFunds. All Rights Reserved</p>
+					</div>
+				</footer>
+				</body>
+				</html>

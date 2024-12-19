@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../css/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+	<title>OnliFunds</title>
+	<style>
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 20px 0;
+        }
+        .pagination button, .pagination a {
+            border: 1px solid #e0e0e0;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: white;
+            text-decoration: none;
+            color: black;
+            border-radius: 5px;
+        }
+        .timehist {
+            padding: 20px 120px;
+        }
+        .timehist h2 {
+            margin: 20px 0;
+            font-size: 1.5em;
+        }
+		.timehist-item {
+			display: flex;
+			align-items: center;
+			margin: 10px 0;
+			width: 100%;
+		}
+
+		.timehist-item .time-and-icon {
+			display: flex;
+			flex-direction: column; 
+			align-items: center;
+			margin: auto;
+			width: 10%;
+		}
+
+		.timehist-item .time {
+			font-size: 0.8em;
+			margin-bottom: 5px; 
+		}
+
+		.timehist-item .icon {
+			background-color: #00bfa5;
+			color: white;
+			border-radius: 50%;
+			padding: 10px;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.timehist-item .content {
+			border: 1px solid;
+			padding: 25px;
+			border-radius: 5px;
+			width: 100%;
+		}
+
+        @media (max-width: 768px) {
+            .timehist {
+                padding: 20px;
+            }
+        }
+	</style>
+</head>
+<body>
+    <!-- Navbar for Logged-in Users -->
+    <nav class="logged-in-navbar">
+        <div class="logged-in-navbar-logo">
+            <a href="lanAfter.html" style="text-decoration:none;">
+                <img src="../images/logo.png" alt="OnliFunds Logo" class="logged-in-logo-img">
+            </a>
+            <div class="logged-in-logo-text">
+                <h1><a href="lanAfter.html" style="text-decoration:none; color:black;">OnliFunds</a></h1>
+                <p>Empower Your Ideas</p>
+            </div>
+        </div>
+        <div class="logged-in-nav-links">
+            <a href="lanAfter.html" class="logged-in-nav-item">Home</a>
+            <a href="aboutA.html" class="logged-in-nav-item">About</a>
+            <a href="projectsA.html" class="logged-in-nav-item">Projects</a>
+            <a href="create1.html" class="logged-in-nav-item logged-in-start-project-button">Start a Project</a>
+            <div class="logged-in-user-profile">
+                <span class="logged-in-user-name">Rosita Quarez</span>
+                <img src="../images/profile.png" alt="User Profile" class="logged-in-profile-img">
+                <div class="dropdown-menu">
+                    <a href="my-projects.html">My Projects</a>
+                    <a href="backed-projects.html">Backed Projects</a>
+                    <a href="profile-settings.html">Profile Settings</a>
+                    <a href="login.html">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userProfile = document.querySelector('.logged-in-user-profile');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            userProfile.addEventListener('click', function () {
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!userProfile.contains(e.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <!-- About Banner Section -->
+    <section class="banner1">
+        <div class="overlay"></div>
+        <div class="banner-content">
+            <h1>Withdrawal History</h1>
+        </div>
+    </section>
+
+	<div class="pagination">
+		<button id="prev-btn">← Previous</button>
+		<span id="page-links"></span>
+		<button id="next-btn">Next →</button>
+	</div>
+    <div class="timehist"></div>
+<script>
+    const withdrawalData = [
+        { date: 'October 18, 2024', transactions: [{ time: '1:30 AM', amount: 'PHP 1,000.00' }, { time: '2:00 AM', amount: 'PHP 500.00' }] },
+        { date: 'October 17, 2024', transactions: [{ time: '12:30 PM', amount: 'PHP 1,500.00' }, { time: '3:00 PM', amount: 'PHP 700.00' }] },
+        { date: 'October 16, 2024', transactions: [{ time: '10:00 AM', amount: 'PHP 800.00' }] },
+        { date: 'October 15, 2024', transactions: [{ time: '5:30 PM', amount: 'PHP 600.00' }, { time: '6:00 PM', amount: 'PHP 400.00' }] },
+        { date: 'October 14, 2024', transactions: [{ time: '1:30 PM', amount: 'PHP 700.00' }, { time: '7:00 PM', amount: 'PHP 500.00' }] },
+		{ date: 'October 13, 2024', transactions: [{ time: '1:30 AM', amount: 'PHP 900.00' }, { time: '7:00 AM', amount: 'PHP 800.00' }] },
+		{ date: 'October 12, 2024', transactions: [{ time: '10:00 AM', amount: 'PHP 800.00' }] },
+    ];
+
+    const itemsPerPage = 2;
+    let currentPage = 1;
+
+    function renderTimeHist(pageData) {
+        const timehist = document.querySelector('.timehist');
+        timehist.innerHTML = '';
+        pageData.forEach(day => {
+            const dateHeader = document.createElement('h2');
+            dateHeader.textContent = day.date;
+            timehist.appendChild(dateHeader);
+
+            day.transactions.forEach(transaction => {
+                const item = document.createElement('div');
+                item.className = 'timehist-item';
+                item.innerHTML = `
+					<div class="timehist-item">
+						<div class="time-and-icon">
+							<div class="time">${transaction.time}</div>
+							<div class="icon"><i class="fas fa-wallet"></i></div>
+						</div>
+						<div class="content">Amount Withdrawn: ${transaction.amount}</div>
+					</div>
+
+                `;
+                timehist.appendChild(item);
+            });
+        });
+    }
+
+    function renderPagination() {
+        const pageLinks = document.getElementById('page-links');
+        const totalPages = Math.ceil(withdrawalData.length / itemsPerPage);
+        pageLinks.innerHTML = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            const link = document.createElement('a');
+            link.textContent = i;
+            link.href = '#';
+            link.className = i === currentPage ? 'active' : '';
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentPage = i;
+                updateDisplay();
+            });
+            pageLinks.appendChild(link);
+        }
+    }
+
+    function updateDisplay() {
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageData = withdrawalData.slice(start, end);
+        renderTimeHist(pageData);
+        renderPagination();
+    }
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            updateDisplay();
+        }
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+        const totalPages = Math.ceil(withdrawalData.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            updateDisplay();
+        }
+    });
+
+    updateDisplay();
+</script>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section about" style="text-align: left; padding-right:200px;">
+                <h2 class="footer-logo">OnliFunds</h2>
+                <p class="footer-description">
+                    OnliFunds is a crowdfunding website that lets you raise money for anything that matters to you.
+                    From personal causes and events to projects and more. We aim to help people from our community
+                    to raised the funds they need.
+                </p>
+            </div>
+
+            <!-- Links Section -->
+            <div class="footer-section links" style="text-align: left; padding-right:200px;">
+                <h3 class="footer-heading">Learn More</h3>
+                <ul class="footer-links">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/#team-members">Team Members</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms And Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section social-media" style="text-align: left;">
+                <h3 class="footer-heading">Social Medias</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><img src="../images/facebook.png" alt="Facebook Icon" style="width: 28px;height:auto;"> Facebook</a></li>
+                    <li><a href="#"><img src="../images/twitter.png" alt="Twitter Icon" style="width: 28px;height:auto;"> Twitter</a></li>
+                    <li><a href="#"><img src="../images/instagram.png" alt="Instagram Icon" style="width: 28px;height:auto;"> Instagram</a></li>
+                    <li><a href="#"><img src="../images/linkedin.png" alt="LinkedIn Icon" style="width: 28px;height:auto;"> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>© 2024 Copyright OnliFunds. All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

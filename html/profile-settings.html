@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../css/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ranchers&family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+	<title>OnliFunds</title>
+	<style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-section {
+            padding: 40px;
+            margin-top: 20px;
+        }
+        .form-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+			text-align:center;
+        }
+        .form-section h3 {
+            font-size: 20px;
+            color: #00796b;
+            margin-bottom: 10px;
+        }
+        .form-g {
+            margin-bottom: 20px;
+        }
+        .form-g label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-g input, .form-g select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-g .profile-pic {
+            display: flex;
+            align-items: center;
+        }
+        .form-g .profile-pic img, .form-g .profile-pic .default-pic {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #fff;
+            background-color: #00796b;
+        }
+        .form-g .profile-pic .actions {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-g .profile-pic .actions button {
+            background: none;
+            border: none;
+            color: #00796b;
+            cursor: pointer;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .form-g .profile-pic .actions button.remove {
+            color: #d32f2f;
+        }
+        .form-g .change-password {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+			width: 50%;
+			background-color: white;
+        }
+        .form-g .change-password i {
+            margin-right: 5px;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-actions .close-button {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #000;
+			width: 45%;
+        }
+        .form-actions .save-button {
+            background-color: #00796b;
+            color: #fff;
+			width: 45%;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-row .form-g {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .form-row .form-g:last-child {
+            margin-right: 0;
+        }
+	</style>
+</head>
+<body>
+    <nav class="logged-in-navbar">
+        <div class="logged-in-navbar-logo">
+            <a href="lanAfter.html" style="text-decoration:none;">
+                <img src="../images/logo.png" alt="OnliFunds Logo" class="logged-in-logo-img">
+            </a>
+            <div class="logged-in-logo-text">
+                <h1><a href="lanAfter.html" style="text-decoration:none; color:black;">OnliFunds</a></h1>
+                <p>Empower Your Ideas</p>
+            </div>
+        </div>
+        <div class="logged-in-nav-links">
+            <a href="lanAfter.html" class="logged-in-nav-item">Home</a>
+            <a href="aboutA.html" class="logged-in-nav-item">About</a>
+            <a href="projectsA.html" class="logged-in-nav-item">Projects</a>
+            <a href="create1.html" class="logged-in-nav-item logged-in-start-project-button">Start a Project</a>
+            <div class="logged-in-user-profile">
+                <span class="logged-in-user-name">Rosita Quarez</span>
+                <img src="../images/profile.png" alt="User Profile" class="logged-in-profile-img">
+                <div class="dropdown-menu">
+                    <a href="my-projects.html">My Projects</a>
+                    <a href="backed-projects.html">Backed Projects</a>
+                    <a href="profile-settings.html">Profile Settings</a>
+                    <a href="login.html">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userProfile = document.querySelector('.logged-in-user-profile');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            userProfile.addEventListener('click', function () {
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!userProfile.contains(e.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <!-- About Banner Section -->
+    <section class="banner1">
+        <div class="overlay"></div>
+        <div class="banner-content">
+            <h1>Profile Settings</h1>
+        </div>
+    </section>
+
+   <div class="container">
+        <div class="form-section">
+            <h2>Edit user profile</h2>
+            <h3>Personal Details</h3>
+            <div class="form-row">
+                <div class="form-g">
+                    <label for="first-name">First name</label>
+                    <input type="text" id="first-name" value="Rosita">
+                </div>
+                <div class="form-g">
+                    <label for="last-name">Last name</label>
+                    <input type="text" id="last-name" value="Quarez">
+                </div>
+            </div>
+            <div class="form-g">
+                <label>Upload profile picture</label>
+                <div class="profile-pic">
+                    <img src="../images/profile.png" alt="Profile Picture" width="100" height="100" id="profile-picture">
+                    <div class="default-pic" id="default-pic" style="display: none;">RQ</div>
+                    <div class="actions">
+                        <button class="change" onclick="document.getElementById('file-input').click();"><i class="fas fa-plus"></i> Change</button>
+                        <button class="remove" onclick="removeProfilePicture();"><i class="fas fa-trash"></i> Remove</button>
+                        <input type="file" id="file-input" style="display: none;" onchange="changeProfilePicture(event);">
+                    </div>
+                </div>
+            </div>
+            <div class="form-g">
+                <label for="email">Email</label>
+                <input type="email" id="email" value="rositaquarez@gmail.com">
+            </div>
+            <div class="form-g">
+                <label for="phone-number">Phone number</label>
+                <input type="text" id="phone-number" value="09664547090">
+            </div>
+            <div class="form-g">
+                <label>Password</label>
+                <div class="change-password" onclick="openChangePasswordModal();"><i class="fas fa-lock"></i> Change Password</div>
+            </div>
+            <h3>Location</h3>
+            <div class="form-g">
+                <label for="country">Country</label>
+                <input type="text" id="country" value="Phillipines" readonly>
+            </div>
+            <div class="form-g">
+                <label for="city">City</label>
+                <input type="text" id="city" value="Cebu City" readonly>
+            </div>
+            <div class="form-g">
+                <label for="barangay">Barangay</label>
+                <select id="barangay">
+                    <option value="Sapangdaku">Sapangdaku</option>
+                    <option value="Apas">Apas</option>
+                    <option value="Banilad">Banilad</option>
+                    <option value="Basak Pardo">Basak Pardo</option>
+                    <option value="Basak San Nicolas">Basak San Nicolas</option>
+                    <option value="Bonbon">Bonbon</option>
+                    <option value="Budlaan">Budlaan</option>
+                    <option value="Busay">Busay</option>
+                    <option value="Capitol Site">Capitol Site</option>
+                    <option value="Carreta">Carreta</option>
+                    <option value="Cogon Ramos">Cogon Ramos</option>
+                    <option value="Day-as">Day-as</option>
+                    <option value="Duljo">Duljo</option>
+                    <option value="Guadalupe">Guadalupe</option>
+                    <option value="Kalunasan">Kalunasan</option>
+                    <option value="Kasambagan">Kasambagan</option>
+                    <option value="Kinasang-an">Kinasang-an</option>
+                    <option value="Labangon">Labangon</option>
+                    <option value="Lahug">Lahug</option>
+                    <option value="Lorega San Miguel">Lorega San Miguel</option>
+                    <option value="Luz">Luz</option>
+                    <option value="Mabolo">Mabolo</option>
+                    <option value="Mambaling">Mambaling</option>
+                    <option value="Pahina Central">Pahina Central</option>
+                    <option value="Pahina San Nicolas">Pahina San Nicolas</option>
+                    <option value="Pasil">Pasil</option>
+                    <option value="Pit-os">Pit-os</option>
+                    <option value="Poblacion Pardo">Poblacion Pardo</option>
+                    <option value="Pulangbato">Pulangbato</option>
+                    <option value="Punta Princesa">Punta Princesa</option>
+                    <option value="Quiot">Quiot</option>
+                    <option value="Sambag I">Sambag I</option>
+                    <option value="Sambag II">Sambag II</option>
+                    <option value="San Antonio">San Antonio</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="San Nicolas Proper">San Nicolas Proper</option>
+                    <option value="Santa Cruz">Santa Cruz</option>
+                    <option value="Santo Niño">Santo Niño</option>
+                    <option value="Sawang Calero">Sawang Calero</option>
+                    <option value="Sinsin">Sinsin</option>
+                    <option value="Suba">Suba</option>
+                    <option value="Sudlon I">Sudlon I</option>
+                    <option value="Sudlon II">Sudlon II</option>
+                    <option value="T. Padilla">T. Padilla</option>
+                    <option value="Talamban">Talamban</option>
+                    <option value="Taptap">Taptap</option>
+                    <option value="Tejero">Tejero</option>
+                    <option value="Tinago">Tinago</option>
+                    <option value="Tisa">Tisa</option>
+                    <option value="Toong">Toong</option>
+                    <option value="Zapatera">Zapatera</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button class="close-button">Close</button>
+                <button class="save-button" onclick="saveProfile();">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="change-password-modal" style="display: none;">
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center;">
+            <div style="background: #fff; padding: 20px; border-radius: 4px; width: 300px;">
+                <h3>Change Password</h3>
+                <div class="form-g">
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password">
+                </div>
+                <div class="form-g">
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password">
+                </div>
+                <div class="form-g">
+                    <label for="confirm-password">Confirm New Password</label>
+                    <input type="password" id="confirm-password">
+                </div>
+                <div class="form-actions">
+                    <button class="close-button" onclick="closeChangePasswordModal();">Cancel</button>
+                    <button class="save-button" onclick="saveNewPassword();">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeProfilePicture(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-picture').src = e.target.result;
+                    document.getElementById('profile-picture').style.display = 'block';
+                    document.getElementById('default-pic').style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removeProfilePicture() {
+            document.getElementById('profile-picture').style.display = 'none';
+            document.getElementById('default-pic').style.display = 'flex';
+        }
+
+        function openChangePasswordModal() {
+            document.getElementById('change-password-modal').style.display = 'flex';
+        }
+
+        function closeChangePasswordModal() {
+            document.getElementById('change-password-modal').style.display = 'none';
+        }
+
+        function saveNewPassword() {
+            const currentPassword = document.getElementById('current-password').value;
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (newPassword === confirmPassword) {
+                alert('Password changed successfully!');
+                closeChangePasswordModal();
+            } else {
+                alert('New passwords do not match!');
+            }
+        }
+		function saveProfile() {
+            alert('Profile successfully edited!');
+        }
+
+    </script>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section about" style="text-align: left; padding-right:200px;">
+                <h2 class="footer-logo">OnliFunds</h2>
+                <p class="footer-description">
+                    OnliFunds is a crowdfunding website that lets you raise money for anything that matters to you.
+                    From personal causes and events to projects and more. We aim to help people from our community
+                    to raised the funds they need.
+                </p>
+            </div>
+
+            <!-- Links Section -->
+            <div class="footer-section links" style="text-align: left; padding-right:200px;">
+                <h3 class="footer-heading">Learn More</h3>
+                <ul class="footer-links">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/#team-members">Team Members</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms And Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section social-media" style="text-align: left;">
+                <h3 class="footer-heading">Social Medias</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><img src="../images/facebook.png" alt="Facebook Icon" style="width: 28px;height:auto;"> Facebook</a></li>
+                    <li><a href="#"><img src="../images/twitter.png" alt="Twitter Icon" style="width: 28px;height:auto;"> Twitter</a></li>
+                    <li><a href="#"><img src="../images/instagram.png" alt="Instagram Icon" style="width: 28px;height:auto;"> Instagram</a></li>
+                    <li><a href="#"><img src="../images/linkedin.png" alt="LinkedIn Icon" style="width: 28px;height:auto;"> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>© 2024 Copyright OnliFunds. All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
